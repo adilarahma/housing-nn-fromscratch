@@ -6,11 +6,11 @@ to predict house prices using the [Housing Prices Dataset](https://www.kaggle.co
 ## Features
 - Custom implementation of:
   - Activation functions (ReLU, Sigmoid, Tanh, etc.)
-  - Loss functions (MSE, MAE)
+  - MSE loss function
   - Forward & Backward pass
   - Gradient Descent (Batch, Mini-batch, Stochastic)
-- Experiment comparison across activations and optimizers
-- Metrics: MSE, MAE, R²
+- Experiment comparison across activations
+- Metric: MSE
 
 ## Repository Structure
 ```
