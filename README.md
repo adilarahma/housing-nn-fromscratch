@@ -15,8 +15,7 @@ to predict house prices using the [Housing Prices Dataset](https://www.kaggle.co
 ## Repository Structure
 ```
 housing-nn-fromscratch/
-  ├─ notebooks/ # Jupyter notebooks for EDA & experiments
+  ├─ notebooks/ # Jupyter notebooks for EDA & final implementation
   ├─ src/ # Python source code
   ├─ results/ # Training logs, plots, saved models
-  ├─ docs/ # Final report and documentation
 ```
