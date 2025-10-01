@@ -1,3 +1,6 @@
-venv/
 .DS_Store
+
+*.venv/
 housing-nn-fromscratch-venv/
+
+__pycache__/
