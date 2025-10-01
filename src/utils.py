@@ -6,35 +6,27 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 # === activation functions === #
-def relu(x):
-    return np.maximum(0,x)
+alpha = 0.01
 
-def relu_derivative(x):
-    return (x>0).astype(float)
+activations = {
+    'linear'        : (lambda x: x,
+                       lambda x: np.ones_like(x)),
+    'relu'          : (lambda x: np.maximum(0, x),
+                       lambda x: (x>0).astype(float)),
+    'leaky_relu'    : (lambda x: np.where(x>0, x, alpha*x),
+                       lambda x: np.where(x>0, 1, alpha)),
+    'sigmoid'       : (lambda x: 1/(1+np.exp(-x)),
+                       lambda x: (1/(1+np.exp(-x)))*(1-(1/(1+np.exp(-x))))),
+    'tanh'          : (np.tanh,
+                       lambda x: 1 - np.tanh(x)**2)
+}
 
-def linear(x):
-    return x
-
-def linear_derivative(x):
-    return np.ones_like(x)
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-def sigmoid_derivative(x):
-    s = sigmoid(x)
-    return s * (1 - s)
-
-def tanh(x):
-    return np.tanh(x)
-
-def tanh_derivative(x):
-    return 1 - np.tanh(x)**2
-
-# === loss functions === #
-def mse(y_true, y_pred):
-    return np.mean((y_true - y_pred)**2)
-
-def mse_derivative(y_true, y_pred):
-    return 2*(y_pred - y_true)/y_true.size
+# === loss function: mse === #
+losses = {
+    'mse': (lambda y_true, y_pred: np.mean((y_true - y_pred)**2),
+            lambda y_true, y_pred: 2*(y_pred - y_true)/y_true.size)
+}
