@@ -13,8 +13,10 @@ to predict house prices using the [Housing Prices Dataset](https://www.kaggle.co
 - Metrics: MSE, MAE, R²
 
 ## Repository Structure
+```
 housing-nn-fromscratch/
-├─ notebooks/ # Jupyter notebooks for EDA & experiments
-├─ src/ # Python source code
-├─ results/ # Training logs, plots, saved models
-├─ docs/ # Final report and documentation
+  ├─ notebooks/ # Jupyter notebooks for EDA & experiments
+  ├─ src/ # Python source code
+  ├─ results/ # Training logs, plots, saved models
+  ├─ docs/ # Final report and documentation
+```
